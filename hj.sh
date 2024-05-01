@@ -7,14 +7,12 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-
 function install_node() {
-
     # 更新系统和安装必要的包
     echo "更新系统软件包..."
     sudo apt update && sudo apt upgrade -y
     echo "安装必要的工具和依赖..."
-    sudo apt install -y curl build-essential jq git libssl-dev pkg-config screen
+    sudo apt install -y curl build-essential jq git libssl-dev pkg-config screen requests
 
     # 安装 Rust 和 Cargo
     echo "正在安装 Rust 和 Cargo..."
@@ -69,5 +67,7 @@ function install_node() {
     sudo apt install gcc
 
     echo '====================== 安装完成 ==========================='
+}
 
-
+# 执行安装环境
+install_node
