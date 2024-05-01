@@ -65,6 +65,8 @@ function install_node() {
 
     # 安装 GCC
     sudo apt install gcc
+    export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+    export PATH="$HOME/.cargo/bin:$PATH"
 
     echo '====================== 安装完成 ==========================='
 }
