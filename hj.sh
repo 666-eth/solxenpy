@@ -63,23 +63,16 @@ function install_node() {
     # 配置其他环境
     source ~/.bashrc
 
-    # 创建新的 Rust 项目
-    cargo new solana_rust_client
-    cd solana_rust_client
-    wget -p /root/solana_rust_client/ https://raw.githubusercontent.com/666-eth/solxenpy/main/Cargo.toml
-    wget -P /root/solana_rust_client/src https://raw.githubusercontent.com/666-eth/solxenpy/main/main.rs
-
     # 安装 GCC
     sudo apt install gcc
 
    # 构建项目
     cargo build
 
-    export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-    export PATH="$HOME/.cargo/bin:$PATH"
-
     echo '====================== 安装完成 ==========================='
 }
 
 # 执行安装环境
 install_node
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
