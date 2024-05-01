@@ -71,5 +71,4 @@ function install_node() {
 
 # 执行安装环境
 install_node
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+
