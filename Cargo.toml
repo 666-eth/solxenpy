@@ -1,0 +1,16 @@
+[package]
+name = "solana_rust_client"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+solana-client = "1.10.11"
+solana-sdk = "1.10.11"
+hex = "0.4"
+ethaddr = "0.2.2"
+colored = "2.0"
+borsh = "0.9.1"
+byteorder = "1.4.3"
+clap = "3.1.6"
