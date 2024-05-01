@@ -66,9 +66,6 @@ function install_node() {
     # 安装 GCC
     sudo apt install gcc
 
-   # 构建项目
-    cargo build
-
     echo '====================== 安装完成 ==========================='
 }
 
