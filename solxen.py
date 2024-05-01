@@ -41,26 +41,6 @@ def run_command(command):
     print("Output:", result.stdout)
     return result.stdout
 
-def download_and_prepare_rust_source():
-    """Download the Rust client file and modify it to use the correct keypair path."""
-    url = "https://gist.githubusercontent.com/jacklevin74/a073004c120f45e32d84d8530d613218/raw/fde1c0fe4f77a85324c324366d2b8a85a47eb14d/client.js"
-    keypair_path = os.path.expanduser('~/.config/solana/id.json')  # Generic way to get home directory
-    response = requests.get(url)
-    rust_code = response.text
-    modified_rust_code = rust_code.replace('/home/ubuntu/.config/solana/id.json', keypair_path)
-    with open('src/main.rs', 'w') as f:  # Ensure this is the correct path within your Rust project
-        f.write(modified_rust_code)
-
-def update_cargo_toml():
-    """Download and replace the Cargo.toml file from a given URL."""
-    cargo_url = "https://gist.githubusercontent.com/jacklevin74/a669ab619946ed0fde522376cb9948cd/raw/d127e709cb4142530b4ce9aea4d52f4c455fca91/Cargo.toml"
-    response = requests.get(cargo_url)
-    if response.status_code == 200:
-        with open('Cargo.toml', 'w') as file:
-            file.write(response.text)
-    else:
-        print("Failed to download the Cargo.toml file")
-        sys.exit(1)
 
 def setup_solana_client(eth_address, keypair_path):
     project_dir = 'solana_rust_client'
